@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Para kay Rhianne 💖</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #ffe6f0, #fff0f5);
+      font-family: 'Segoe Script', cursive;
+      text-align: center;
+      padding: 40px;
+      color: #c2185b;
+      min-height: 100vh;
+      overflow-x: hidden;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.2em;
+    }
+
+    h2 {
+      color: #ad1457;
+      margin-top: 0;
+    }
+
+    .flowers {
+      font-size: 3em;
+      margin: 20px 0;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    .letter {
+      background: #fffafa;
+      border: 2px dashed #f8bbd0;
+      padding: 25px;
+      max-width: 600px;
+      margin: 0 auto;
+      border-radius: 25px;
+      box-shadow: 0 0 15px #f8bbd0;
+    }
+
+    .signature {
+      margin-top: 30px;
+      font-size: 1.2em;
+      color: #880e4f;
+    }
+
+    .flower {
+      position: absolute;
+      top: -50px;
+      font-size: 30px;
+      animation: fall 5s linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        top: -50px;
+        transform: rotate(0deg);
+      }
+      100% {
+        top: 100%;
+        transform: rotate(360deg);
+      }
+    }
+
+    .love-message {
+      font-size: 40px;
+      color: #ff5c8d;
+      font-weight: bold;
+      margin-top: 30px;
+      display: none;
+      animation: fadeIn 2s forwards;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .button {
+      padding: 20px 40px;
+      font-size: 20px;
+      background: linear-gradient(135deg, #ff5c8d, #ff3b6b);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease-in-out;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 10px;
+    }
+
+    .button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+      background: linear-gradient(135deg, #ff3b6b, #ff5c8d);
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>Para sa pinakamamahal kong asawa💕</h1>
+  <h2>Mahal kita, sobra! 😚</h2>
+
+  <div class="flowers">🌸💐🌷🌹🌼🌻🌺</div>
+
+  <div class="letter">
+    <p>Hi love,</p>
+    <p>Alam mo ba? Sa bawat segundo, minuto, oras, araw na lumilipas, mas lalo kitang namimiss 😔. Salamat sa pagpasok sa buhay ko at sa lahat ng kilig, lambing, at pagmamahal na binibigay mo kahit sakit lang ako sa ulo mo. 🥰</p>
+    <p>Kung marami lang akong pera palagi kitang aalayan ng bulaklak araw-araw,😔. Pero sa ngayon, itong virtual flowers muna dito sa cute na ginawa ko na 'to. 😚💐</p>
+    <p>Ginawa ko tong simpleng webpage kasama ko si chatGPT para sayo para kahit papano, makita mo yung effort ko at mapasaya ka kahit kaunti. Sana kahit ganito lang, mawala na yung galit mo sa’kin. 🥺❤️</p>
+    <p>Miss na miss na kita. Sana napasaya ka nito kahit kaunti, pinag aaralan ko pa po kasi 'to e. 🫶 bati na tayo please🙏</p>
+    
+    <p class="signature">— From your one and only, Justin 💗</p>
+  </div>
+
+  <!-- Button to start the flower rain -->
+  <button class="button" onclick="startFlowerRain()">Click me if you miss me 💘</button>
+
+  <!-- Button to start raining "I love you" in different languages -->
+  <button class="button" onclick="startLoveRain()">Click mo 'ko, tapos tingin ka sa baba💖</button>
+
+  <!-- Button to stop both rain effects -->
+  <button class="button" onclick="stopRain()">Stop ☔</button>
+
+  <!-- Love message -->
+  <div class="love-message" id="loveMessage">I love you, Rhianne! 💖</div>
+
+  <script>
+    let flowerRainInterval, loveRainInterval;
+
+    // Start flower rain
+    function startFlowerRain() {
+      flowerRainInterval = setInterval(createFlower, 500); // Generate flowers every 500ms
+      document.querySelector(".flowers").style.animation = "none"; // Disable initial animation for continuous flowers
+    }
+
+    // Create a flower at random positions and random speed
+    function createFlower() {
+      var flower = document.createElement("div");
+      flower.classList.add("flower");
+      flower.style.left = Math.random() * window.innerWidth + "px";
+      flower.style.animationDuration = Math.random() * 5 + 4 + "s";
+      flower.innerHTML = "🌸";
+      document.body.appendChild(flower);
+
+      setTimeout(function() {
+        flower.remove();
+      }, 5000); // Remove flower after 5 seconds
+    }
+
+    // Start raining "I love you" in different languages
+    function startLoveRain() {
+      let messages = [
+        "I love you! 💖",
+        "Te quiero! 💖",
+        "Je t'aime! 💖",
+        "Ti amo! 💖",
+        "Ich liebe dich! 💖",
+        "Saya cinta padamu! 💖",
+        "Eu te amo! 💖",
+        "Mahal kita! 💖",
+        "Aishitemasu! 💖"
+      ];
+
+      loveRainInterval = setInterval(function() {
+        var loveMessage = document.getElementById("loveMessage");
+        loveMessage.textContent = messages[Math.floor(Math.random() * messages.length)];
+        loveMessage.style.display = "block";
+        loveMessage.style.animation = "fadeIn 1s forwards";
+      }, 3000); // Change message every 3 seconds
+    }
+
+    // Stop the rain effects
+    function stopRain() {
+      clearInterval(flowerRainInterval); // Stop flower rain
+      clearInterval(loveRainInterval); // Stop "I love you" rain
+      document.querySelector(".flowers").style.animation = "float 3s ease-in-out infinite"; // Reset flowers animation
+      document.getElementById("loveMessage").style.display = "none"; // Hide "I love you" message
+    }
+  </script>
+
+</body>
+</html>
